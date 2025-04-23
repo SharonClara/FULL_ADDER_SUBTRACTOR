@@ -65,13 +65,37 @@ Full Subtractor
 4.Compile, simulate, implement, and program the design similarly to the full adder.
 
 **Program:**
+```
+FULL ADDER
 
-![image](https://github.com/user-attachments/assets/673556a7-6261-4c54-acf2-03430fcc4db2)
-![image](https://github.com/user-attachments/assets/ec372a0c-5f94-43e1-b30d-fb3cf80de6b7)
+module exp4(a,b,c,sum, carry);
+input a,b,c;
+output sum, carry;
+wire w1,w2,w3;
+assign sum=a^b^c;
+assign w1=a&b;
+assign w2=b&c;
+assign w3=c&a;
+assign carry=w1|w2|w3;
+endmodule;
 
-Developed by:SHARON CLARA A                                                                                                                                                                                            
-Date :19/03/2025                                                                                                                                                                                                      
-RegisterNumber:212224040310
+FULL SUBTRACTOR
+
+module exp4_1(df,bo,a,b,bin);
+input a,b,bin;
+output df,bo;
+wire w1,w2,w3;
+assign w1=a^b;
+assign w2=(~a&b);
+assign w3=(~w1&bin);
+assign df=w1^bin;
+assign bo=w2|w3;
+endmodule
+```
+
+**Developed by:SHARON CLARA A**                                                                                                                                                                                           
+**Date :19/03/2025**                                                                                                                                                                                                      
+**RegisterNumber:212224040310**
 **RTL Schematic**
 ![image](https://github.com/user-attachments/assets/bf828d8d-1b06-490c-9121-3cca51c0839b)
 
